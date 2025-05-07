@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Formulario de Contacto</title>
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <h2>Contáctanos</h2>
-    <form id="contact-form" onsubmit="enviar(); return false;">
+    <form id="contact-form" action="#" method="post" onsubmit="enviar(); return false;">
         <label for="name">Nombre</label>
-        <input type="text" id="name"><br>
+        <input type="text" id="name" name="name" required>
 
         <label for="email">Correo</label>
-        <input type="text" id="email"><br>
+        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
 
         <label for="msg">Mensaje</label>
-        <textarea id="msg"></textarea><br>
+        <textarea id="msg" name="msg" required></textarea>
 
         <button type="submit">Enviar</button>
     </form>
