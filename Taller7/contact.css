@@ -1,34 +1,97 @@
-h2 {
-    color: #FFFFFF;
-    background-color: #1E1E1E;
+/* Estilos generales */
+body {
+    background: linear-gradient(to right, #4A90E2, #50B3A2);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
+
+/* Contenedor del formulario */
 form {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
 }
-label, input, textarea {
-    display: block;
+
+/* Título */
+h2 {
+    color: #4A90E2;
     margin-bottom: 20px;
 }
 
+/* Estilos para etiquetas y campos */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+input, textarea {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #50B3A2;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, textarea:focus {
+    border-color: #4A90E2;
+    background: rgba(255, 255, 255, 1);
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.5);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Botón de enviar */
 button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    background: #50B3A2;
+    font-size: 18px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-button:hover {
-    background-color: #555;
-}
-#status {
-    text-align: center;
-    color: green;
-    font-weight: bold;
+    color: white;
+    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
     margin-top: 15px;
 }
 
+button:hover {
+    background: #4A90E2;
+    transform: scale(1.05);
+}
+
+/* Mensaje de estado */
+#status {
+    background-color: rgba(0, 128, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    color: #008000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    form {
+        width: 95%;
+    }
+    
+    button {
+        width: 100%;
+    }
+}

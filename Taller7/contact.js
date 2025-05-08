@@ -4,18 +4,30 @@ function enviar() {
     const msg = document.getElementById('msg');
     const status = document.getElementById('status');
 
-    if (!email.checkValidity() || !name.value.trim() || !msg.value.trim()) {
-        alert("Por favor, completa todos los campos correctamente.");
+    // Limpiar mensajes previos
+    status.textContent = "";
+
+    // Validaciones
+    if (!email.checkValidity()) {
+        status.textContent = "Por favor, introduce un correo válido.";
+        return;
+    }
+    
+    if (!name.value.trim()) {
+        status.textContent = "El campo de nombre no puede estar vacío.";
+        return;
+    }
+    
+    if (msg.value.trim().length < 10) {
+        status.textContent = "El mensaje debe tener al menos 10 caracteres.";
         return;
     }
 
-    alert("Gracias por contactarnos, " + name.value);
+    // Confirmación
+    status.textContent = `Gracias por contactarnos, ${name.value}. Tu mensaje ha sido enviado correctamente.`;
 
-    // Limpiar campos
+    // Limpiar campos después de la confirmación
     msg.value = "";
     name.value = "";
     email.value = "";
-
-    // Mostrar mensaje de confirmación
-    status.textContent = "Mensaje enviado correctamente.";
 }
